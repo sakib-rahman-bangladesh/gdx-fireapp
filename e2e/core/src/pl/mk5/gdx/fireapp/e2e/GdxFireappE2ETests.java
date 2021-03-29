@@ -11,7 +11,9 @@ import pl.mk5.gdx.fireapp.e2e.runner.E2ETestRunner;
 import pl.mk5.gdx.fireapp.e2e.runner.E2ETestRunnerFactory;
 import pl.mk5.gdx.fireapp.e2e.tests.AnalyticsTest;
 import pl.mk5.gdx.fireapp.e2e.tests.AuthAnonymousTest;
+import pl.mk5.gdx.fireapp.e2e.tests.AuthAppleSignInTest;
 import pl.mk5.gdx.fireapp.e2e.tests.AuthCreateUserEmailPasswordTest;
+import pl.mk5.gdx.fireapp.e2e.tests.AuthGoogleSignInTest;
 import pl.mk5.gdx.fireapp.e2e.tests.AuthSignInUserEmailPasswordTest;
 import pl.mk5.gdx.fireapp.e2e.tests.AuthSignOutTest;
 import pl.mk5.gdx.fireapp.e2e.tests.BadlogicTest;
@@ -48,41 +50,42 @@ public class GdxFireappE2ETests extends ApplicationAdapter {
 
     public GdxFireappE2ETests() {
         GdxFIRLogger.setEnabled(true);
-        e2ETestRunner.addNext(new BadlogicTest());
-        e2ETestRunner.addNext(new AuthAnonymousTest());
-        e2ETestRunner.addNext(new AuthCreateUserEmailPasswordTest());
-        e2ETestRunner.addNext(new AuthSignInUserEmailPasswordTest());
-//        e2ETestRunner.addNext(AuthGoogleSignInTest.class);
-        e2ETestRunner.addNext(new GdxFirebaseUserTest(), 60);
-        e2ETestRunner.addNext(new AuthSignOutTest());
-
-        e2ETestRunner.addNext(new StorageUploadImageTest(), 60);
-        e2ETestRunner.addNext(new StorageDownloadImageTest(), 30);
-        e2ETestRunner.addNext(new StorageUploadBytesTest(), 60);
-        e2ETestRunner.addNext(new StorageDownloadBytesTest(), 30);
-        e2ETestRunner.addNext(new StorageDeleteTest(), 30);
-
-        e2ETestRunner.addNext(new AnalyticsTest());
-        e2ETestRunner.addNext(new CrashTest());
-
-        e2ETestRunner.addNext(new DatabaseReadPojoTest(), 30);
-        e2ETestRunner.addNext(new DatabaseReadPojoFailTest(), 30);
-        e2ETestRunner.addNext(new DatabaseSetValueTest(), 10);
-        e2ETestRunner.addNext(new DatabaseLimitEqualTest(), 60);
-        e2ETestRunner.addNext(new DatabaseOrderByChildTest(), 60);
-        e2ETestRunner.addNext(new DatabaseOrderByTest(), 60);
-        e2ETestRunner.addNext(new DatabaseReadValueTest(), 10);
-        e2ETestRunner.addNext(new DatabaseReadValue2Test(), 30);
-        e2ETestRunner.addNext(new DatabaseListenerValueTest(), 10);
-//        e2ETestRunner.addNext(new DatabaseListenerValueCancelTest(), 10);
-        e2ETestRunner.addNext(new DatabaseReadPojoListTest(), 10);
-        e2ETestRunner.addNext(new DatabaseReadPojoMapWithKeysTest(), 10);
-        e2ETestRunner.addNext(new DatabaseChildEventTest(), 30);
-        e2ETestRunner.addNext(new DatabaseTransactionValueTest(), 30);
-        e2ETestRunner.addNext(new DatabaseTransactionValue2Test(), 30);
-        e2ETestRunner.addNext(new DatabaseTransactionDefaultDoubleValueTest(), 120);
-        e2ETestRunner.addNext(new DatabaseTransactionDefaultLongValueTest(), 30);
-        e2ETestRunner.addNext(new DatabaseTransactionDefaultStringValueTest(), 30);
+//        e2ETestRunner.addNext(new BadlogicTest());
+//        e2ETestRunner.addNext(new AuthAnonymousTest());
+//        e2ETestRunner.addNext(new AuthCreateUserEmailPasswordTest());
+//        e2ETestRunner.addNext(new AuthSignInUserEmailPasswordTest());
+//          e2ETestRunner.addNext(new AuthGoogleSignInTest(), 120);
+          e2ETestRunner.addNext(new AuthAppleSignInTest(), 120);
+//        e2ETestRunner.addNext(new GdxFirebaseUserTest(), 60);
+//        e2ETestRunner.addNext(new AuthSignOutTest());
+//
+//        e2ETestRunner.addNext(new StorageUploadImageTest(), 60);
+//        e2ETestRunner.addNext(new StorageDownloadImageTest(), 30);
+//        e2ETestRunner.addNext(new StorageUploadBytesTest(), 60);
+//        e2ETestRunner.addNext(new StorageDownloadBytesTest(), 30);
+//        e2ETestRunner.addNext(new StorageDeleteTest(), 30);
+//
+//        e2ETestRunner.addNext(new AnalyticsTest());
+//        e2ETestRunner.addNext(new CrashTest());
+//
+//        e2ETestRunner.addNext(new DatabaseReadPojoTest(), 30);
+//        e2ETestRunner.addNext(new DatabaseReadPojoFailTest(), 30);
+//        e2ETestRunner.addNext(new DatabaseSetValueTest(), 10);
+//        e2ETestRunner.addNext(new DatabaseLimitEqualTest(), 60);
+//        e2ETestRunner.addNext(new DatabaseOrderByChildTest(), 60);
+//        e2ETestRunner.addNext(new DatabaseOrderByTest(), 60);
+//        e2ETestRunner.addNext(new DatabaseReadValueTest(), 10);
+//        e2ETestRunner.addNext(new DatabaseReadValue2Test(), 30);
+//        e2ETestRunner.addNext(new DatabaseListenerValueTest(), 10);
+////        e2ETestRunner.addNext(new DatabaseListenerValueCancelTest(), 10);
+//        e2ETestRunner.addNext(new DatabaseReadPojoListTest(), 10);
+//        e2ETestRunner.addNext(new DatabaseReadPojoMapWithKeysTest(), 10);
+//        e2ETestRunner.addNext(new DatabaseChildEventTest(), 30);
+//        e2ETestRunner.addNext(new DatabaseTransactionValueTest(), 30);
+//        e2ETestRunner.addNext(new DatabaseTransactionValue2Test(), 30);
+//        e2ETestRunner.addNext(new DatabaseTransactionDefaultDoubleValueTest(), 120);
+//        e2ETestRunner.addNext(new DatabaseTransactionDefaultLongValueTest(), 30);
+//        e2ETestRunner.addNext(new DatabaseTransactionDefaultStringValueTest(), 30);
 
 
         e2ETestRunner.onFinish(new Runnable() {
